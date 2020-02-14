@@ -8,6 +8,8 @@ app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'mustache');
 app.engine('mustache', hogan.__express);
 
+//setting static assests 
+app.use(express.static(path.join(__dirname,'public')));
 
 //rendring some text 
 app.get('/', (req, res, next)=>{

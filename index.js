@@ -11,30 +11,9 @@ app.engine('mustache', hogan.__express);
 //setting static assests 
 app.use(express.static(path.join(__dirname,'public')));
 
-//rendring some text 
-app.get('/', (req, res, next)=>{
-
-    res.send("Hello world ");
-});
-
-//rendiring json 
-app.get('/json', (req, res, next)=>{
-
-    const data = {
-       
-        greeting : "Hellow Man this is json !!!"
-
-    };
-    
-    res.json(data);
-});
-
-//rendring html 
-
-app.get('/home', (req, res, next)=>{
-
-    res.render('home',null);
-});
+// adding new routes in orgainzized manner 
+const indexrouter = require('./routes/index');
+app.use('/', indexrouter);
 
 app.listen(3000);
 

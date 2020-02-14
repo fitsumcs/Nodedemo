@@ -1,12 +1,12 @@
 const express = require ('express');
-
 const path = require('path');
+const hogan = require('hogan-middleware')
 
 const app = express();
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'mustache');
-app.engine('mustache', require('hogan-middleware').__express);
+app.engine('mustache', hogan.__express);
 
 
 //rendring some text 

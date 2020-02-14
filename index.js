@@ -14,6 +14,8 @@ app.use(express.static(path.join(__dirname,'public')));
 // adding new routes in orgainzized manner 
 const indexrouter = require('./routes/index');
 app.use('/', indexrouter);
+const qrouter = require('./routes/query');
+app.use('/query', qrouter);
 
 app.listen(3000);
 
